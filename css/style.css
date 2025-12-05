@@ -676,67 +676,9 @@ header h1, section h2, p, nav ul li a {
   transform: scale(1.08);
   box-shadow: 0 0 30px #00ffff, 0 0 70px #00ccff inset;
 }
-// 🎤 Speak to Universe Button Control
-const speakButton = document.querySelector('.speak-btn');
-let recognition;
-
-// Check if browser supports speech recognition
-if ('webkitSpeechRecognition' in window) {
-  recognition = new webkitSpeechRecognition();
-  recognition.lang = 'en-US';
-  recognition.continuous = false;
-  recognition.interimResults = false;
-
-  speakButton.addEventListener('click', () => {
-    speakButton.innerText = "🎧 Listening...";
-    recognition.start();
-  });
-
-  recognition.onresult = (event) => {
-    const transcript = event.results[0][0].transcript.toLowerCase();
-    console.log("User said:", transcript);
-
-    // Voice commands
-    if (transcript.includes("hello")) {
-      speakText("Hello Asif! Welcome back to your universe.");
-      glowEffect();
-    } 
-    else if (transcript.includes("light")) {
-      speakText("Activating cosmic lights!");
-      document.body.style.background = "radial-gradient(circle, #001f3f, #000)";
-    } 
-    else {
-      speakText("I didn’t understand that. Please try again.");
-    }
-
-    speakButton.innerText = "🎤 Speak to Universe";
-  };
-
-  recognition.onerror = () => {
-    speakButton.innerText = "🎤 Speak to Universe";
-    speakText("Sorry, I couldn’t hear properly.");
-  };
-}
-
-// Voice output (Speech)
-function speakText(text) {
-  const speech = new SpeechSynthesisUtterance(text);
-  speech.rate = 1;
-  speech.pitch = 1;
-  speech.lang = 'en-US';
-  window.speechSynthesis.speak(speech);
-}
-
-// Small glow animation trigger
-function glowEffect() {
-  const planet = document.querySelector('.planet');
-  if (planet) {
-    planet.style.filter = "drop-shadow(0 0 40px cyan)";
-    setTimeout(() => {
-      planet.style.filter = "drop-shadow(0 0 20px cyan)";
-    }, 2000);
-  }
-}
+/* JavaScript moved to js/script.js — keep styles only in this CSS file.
+   The voice control and speech code was removed from the stylesheet because
+   embedding JS in a CSS file breaks parsing; see js/script.js for the logic. */
 html {
   scroll-behavior: smooth;
 }
@@ -1614,62 +1556,7 @@ function processCommand(command) {
 }
 
 /* 🌍 Responsive design for mobile devices */
-@media (max-width: 768px) {
-
-  /* Navbar fix */
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  header h1 {
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-  }
-
-  nav ul li {
-    margin: 5px 0;
-  }
-
-  nav ul li a {
-    font-size: 16px;
-    display: block;
-  }
-
-  /* Hero section */
-  .hero {
-    padding: 30px 10px;
-    text-align: center;
-  }
-
-  .hero h2 {
-    font-size: 24px;
-    line-height: 1.4;
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
-
-  /* Chat button fix */
-  .chat-button {
-    bottom: 20px;
-    right: 20px;
-    transform: scale(0.9);
-  }
-
-  /* Background and layout fix */
-  body {
-    background-size: cover;
-    background-position: center;
-  }
-
+/* Voice assistant JS moved to js/script.js — JavaScript removed from CSS. */
   /* Text centering and wrapping */
   .content, .intro-text {
     padding: 10px;
