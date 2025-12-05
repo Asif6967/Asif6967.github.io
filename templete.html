@@ -1,0 +1,170 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Asif Universe Global</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+  <!-- 🌐 HEADER -->
+  <header>
+    <div class="logo">🌌 Real Asif Universe Global</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 🪐 FLOATING PLANETS -->
+  <div class="floating-planets">
+    <div class="planet p1"></div>
+    <div class="planet p2"></div>
+    <div class="planet p3"></div>
+  </div>
+
+  <!-- 🏠 HOME SECTION -->
+  <section id="home" class="home-section reveal">
+    <canvas id="stars"></canvas>
+    <h1>Welcome to Real Asif Universe Global</h1>
+    <p>Connecting the world through innovation, knowledge, and global vision.</p>
+    <span id="tagline"></span>
+
+    <div class="home-buttons">
+      <a href="#about" class="btn">Learn More</a>
+      <a href="#services" class="btn">Our Services</a>
+    </div>
+  </section>
+
+  <!-- 🧠 ABOUT SECTION -->
+  <section id="about" class="fade-section reveal">
+    <h2>About Us</h2>
+    <p>We are building a digital future with advanced AI, education, and global innovation. 
+    Our mission is to inspire humanity through intelligent design and technology.</p>
+  </section>
+
+  <!-- ⚙️ SERVICES SECTION -->
+  <section id="services" class="fade-section reveal">
+    <h2>Our Services</h2>
+    <div class="service-container">
+      <div class="service-box">🌐 Web Solutions</div>
+      <div class="service-box">🤖 Artificial Intelligence</div>
+      <div class="service-box">🎓 Digital Learning</div>
+    </div>
+  </section>
+
+  <!-- 📩 CONTACT SECTION -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- 🌟 FLOATING CHATBOT -->
+  <div id="chatBubble" style="position: fixed; bottom: 25px; right: 25px; 
+    background: #00bfff; color: white; border-radius: 50%; 
+    width: 60px; height: 60px; display: flex; justify-content: center; 
+    align-items: center; font-size: 26px; box-shadow: 0 0 20px #00bfff; 
+    cursor: pointer; z-index: 999;">
+    💬
+  </div>
+
+  <div id="chatPopup" class="hidden" 
+    style="position: fixed; bottom: 100px; right: 25px; width: 350px; 
+    background: rgba(0, 10, 20, 0.95); border-radius: 15px; 
+    box-shadow: 0 0 25px #00bfff; z-index: 1000;">
+
+    <div class="chat-header" 
+      style="background: #00bfff; color: white; padding: 10px 15px; 
+      display: flex; justify-content: space-between; align-items: center; 
+      border-radius: 15px 15px 0 0;">
+      <h3 style="margin: 0;">AI Assistant 🤖</h3>
+      <button id="closeChat" 
+        style="background: none; border: none; color: white; font-size: 20px; cursor: pointer;">✖</button>
+    </div>
+
+    <div id="chatBox" 
+      style="height: 250px; overflow-y: auto; background: #000; color: white; padding: 10px;"></div>
+
+    <div class="chat-input" style="display: flex; padding: 10px;">
+      <input type="text" id="userInput" placeholder="Type or speak something..." 
+        style="flex: 1; padding: 8px; border-radius: 8px; border: none;">
+      <button id="sendBtn" style="margin-left: 5px;">Send</button>
+      <button id="micBtn" style="margin-left: 5px;">🎤</button>
+    </div>
+  </div>
+  <!-- 🌌 Real Asif Universe — Live News Popup -->
+<div class="news-popup" id="newsPopup">
+  <div class="popup-header">
+    <h3>🚀 Real Asif News</h3>
+    <button id="closeNews">×</button>
+  </div>
+  <div id="newsContainer" class="popup-news"></div>
+</div>
+
+<!-- Floating News Button -->
+<button class="news-btn" id="openNews">🛰️</button>
+
+
+  <!-- 🔻 FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <p>Email: <a href="mailto:contact@realasifuniverse.com">contact@realasifuniverse.com</a></p>
+      <p>Follow us: <a href="#">LinkedIn</a> | <a href="#">Twitter</a></p>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Real Asif Universe Global | All Rights Reserved.</p>
+      <div class="footer-words">
+        Innovation • Technology • Knowledge • Future • Connection • Energy
+      </div>
+    </div>
+  </footer>
+
+  <!-- 🧩 JAVASCRIPT LINK -->
+  <script src="js/app.js"></script>
+  <!-- 💬 Floating Chat Button -->
+<div id="chatBubble" class="chat-bubble">💬</div>
+
+<!-- 🤖 Chat Popup -->
+<div id="chatPopup" class="chat-popup hidden">
+  <div class="chat-header">
+    <h3>AI Assistant 🤖</h3>
+    <button id="closeChat" class="close-btn">✖</button>
+  </div>
+  <div id="chatBox" class="chat-box"></div>
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Type or speak something..." />
+    <button id="sendBtn">Send</button>
+    <button id="micBtn">🎤</button>
+  </div>
+</div>
+
+<!-- JS -->
+<script src="js/app.js"></script>
+
+<!-- 🎙️ Real Asif Universe Global Voice Assistant -->
+<div id="voiceAssistant">
+  <button id="micButton">🎤 Talk to AI</button>
+  <p id="aiResponse">Say something...</p>
+</div>
+
+<script src="js/voice.js"></script>
+
+
+
+</body>
+
+
+</html>
+
+ 
+

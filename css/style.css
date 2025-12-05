@@ -1,0 +1,1618 @@
+ /* 🌌 Real Asif Universe Global — Premium Modern Design */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0d1b2a 0%, #000000 100%);
+  color: #fff;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ✨ Header */
+header {
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 170, 255, 0.3);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #00aaff;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 10px #00aaff;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+nav ul li a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #00aaff;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: #00aaff;
+  text-shadow: 0 0 10px #00aaff;
+}
+
+/* 💫 Hero Section */
+#home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+#home h1 {
+  font-size: 2.8rem;
+  color: #00aaff;
+  text-shadow: 0 0 20px #00aaff, 0 0 40px #00aaff;
+  margin-bottom: 15px;
+}
+
+#home p {
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+/* ⚡ Section Styling */
+section {
+  padding: 80px 10%;
+  min-height: 90vh;
+  transition: all 0.6s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  color: #00aaff;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #00aaff;
+}
+
+section p, section li {
+  color: #ddd;
+  font-size: 1.1rem;
+}
+
+/* 🧩 Cards for Services */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 170, 255, 0.2);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 170, 255, 0.3);
+}
+
+/* 📬 Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+
+form input, form textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 170, 255, 0.3);
+  padding: 12px;
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+form button {
+  background: linear-gradient(90deg, #00aaff, #0077b6);
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+}
+
+/* 🌠 Footer */
+footer {
+  background: #0a0a0a;
+  text-align: center;
+  padding: 25px;
+  font-size: 0.9rem;
+  color: #888;
+  border-top: 1px solid rgba(0, 170, 255, 0.3);
+}
+
+/* 🌌 Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  header { flex-direction: column; gap: 15px; padding: 20px; }
+  nav ul { flex-direction: column; gap: 20px; }
+  #home h1 { font-size: 2.2rem; }
+}
+/* 🌌 General Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+
+body {
+  background: radial-gradient(circle at top, #0d1b2a 0%, #000 100%);
+  color: #fff;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* 🌠 Galaxy Canvas */
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* 🧭 Header */
+header {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 20px 10%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.3);
+}
+
+/* 💫 Animated Logo */
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00aaff, #00ffcc, #ff00ff, #00aaff);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 5s ease infinite, glowPulse 2.5s ease-in-out infinite;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #00aaff, #00ffcc, #ff00ff, #00aaff);
+  background-size: 400% 400%;
+  border-radius: 10px;
+  animation: ribbonMove 3s linear infinite;
+  box-shadow: 0 0 10px #00aaff;
+}
+
+/* 🔮 Animations */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes glowPulse {
+  0%,100% { text-shadow: 0 0 20px #00aaff, 0 0 40px #00aaff; }
+  50% { text-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffcc; }
+}
+@keyframes ribbonMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* 🌐 Navbar */
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+  margin-top: 10px;
+}
+nav ul li a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* 🌈 Sections */
+section {
+  padding: 80px 10%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  color: #00aaff;
+  text-shadow: 0 0 20px #00aaff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 170, 255, 0.3);
+  padding: 30px;
+  border-radius: 12px;
+  min-width: 200px;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(0, 170, 255, 0.4);
+}
+
+/* 📬 Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+form input, form textarea {
+  width: 80%;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+}
+form button {
+  background: linear-gradient(90deg, #00aaff, #0077b6);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px #00aaff;
+}
+
+/* 🪐 Footer */
+footer {
+  background: #000;
+  color: #888;
+  padding: 25px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(0, 170, 255, 0.3);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  nav ul { flex-direction: column; gap: 15px; }
+  section { padding: 60px 5%; }
+}
+/* 🌍 3D Glowing Planet */
+.planet {
+  position: fixed;
+  top: 50%;
+  left: 80%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #00ffff, #003366);
+  box-shadow: 0 0 40px #00ffff, inset -20px 0 40px rgba(0,0,0,0.8);
+  animation: rotatePlanet 20s linear infinite;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+@keyframes rotatePlanet {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+/* 🌍 Real Asif Universe Global — Perfect Balanced Planet */
+
+.planet {
+  position: fixed;
+  top: 40%;               /* थोड़ा नीचे ताकि header से टकराए नहीं */
+  left: 88%;              /* थोड़ा दाहिने corner में */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #00ffff, #001a33 75%);
+  box-shadow:
+    0 0 60px 15px rgba(0, 255, 255, 0.2),
+    inset -15px 0 40px rgba(0, 0, 0, 0.8),
+    0 0 90px 20px rgba(0, 255, 255, 0.08);
+  animation: rotatePlanet 30s linear infinite;
+  transform: translate(-50%, -50%) scale(0.9);
+  filter: blur(0.2px);
+  opacity: 0.8;
+  z-index: -1;            /* background stars के ऊपर लेकिन text के पीछे */
+  transition: all 0.4s ease;
+}
+
+/* 🌌 Slow Subtle Rotation */
+@keyframes rotatePlanet {
+  0% { transform: translate(-50%, -50%) scale(0.9) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) scale(0.9) rotate(360deg); }
+}
+
+/* 💫 Very Light Orbit Glow (optional aesthetic ring) */
+.planet::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 170px;
+  height: 170px;
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotateX(65deg);
+  animation: orbitGlow 10s linear infinite;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+}
+
+/* 💫 Smooth slow orbit motion */
+@keyframes orbitGlow {
+  0% { transform: translate(-50%, -50%) rotateX(65deg) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotateX(65deg) rotate(360deg); }
+}
+/* ⚡ Next-Gen Cursor Trail Canvas (Smooth & Futuristic) */
+#cursorTrail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;  /* ensures clicks pass through */
+  z-index: 10;           /* stays above background, below UI elements */
+  mix-blend-mode: screen; /* merges glow with background smoothly */
+  filter: blur(0.5px) brightness(1.3);
+  transition: opacity 0.3s ease;
+}
+/* ===========================================================
+   ⚡ NEXT-GEN CURSOR TRAIL EFFECT (FINAL VERSION)
+   Just paste this at the very end of style.css
+   =========================================================== */
+
+#cursorTrail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;      /* allows normal clicking */
+  z-index: 10;               /* above background, below UI */
+  mix-blend-mode: screen;    /* smooth glowing blend */
+  filter: blur(0.5px) brightness(1.3);  /* soft glowing edge */
+  transition: opacity 0.3s ease;
+}
+/* ===========================================================
+   🌈 Auto Color-Changing Neon Glow Text
+   For the main "Welcome to Real Asif Universe Global" heading
+   =========================================================== */
+
+#home h1 {
+  background: linear-gradient(270deg, #00ffff, #00aaff, #ff00ff, #00ffcc, #00ffff);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: neonShift 8s ease infinite;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(0, 200, 255, 0.6),
+               0 0 40px rgba(0, 150, 255, 0.4),
+               0 0 60px rgba(0, 255, 255, 0.2);
+}
+
+/* 💫 Animated gradient shifting colors */
+@keyframes neonShift {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 50% 50%; }
+  50%  { background-position: 100% 50%; }
+  75%  { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* ===========================================================
+   💫 Smooth Breathing Glow Animation for Tagline
+   =========================================================== */
+
+#home p {
+  color: #cccccc;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  animation: glowPulse 4s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.3),
+               0 0 20px rgba(0, 200, 255, 0.2);
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0.8;
+    text-shadow: 0 0 10px rgba(0, 200, 255, 0.2);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 25px rgba(0, 255, 255, 0.5),
+                 0 0 50px rgba(0, 200, 255, 0.3);
+  }
+  100% {
+    opacity: 0.8;
+    text-shadow: 0 0 10px rgba(0, 200, 255, 0.2);
+  }
+}
+/* ===========================================================
+   🌌 ANIMATED GALAXY BACKGROUND (STARS + NEBULA CLOUDS)
+   =========================================================== */
+
+body {
+  background: radial-gradient(circle at 50% 20%, #001122, #000814 90%);
+  overflow-x: hidden;
+}
+
+/* ✨ Moving Stars Layer */
+.stars {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: transparent;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #00ffff, transparent),
+    radial-gradient(2px 2px at 80px 120px, #ffffff, transparent),
+    radial-gradient(2px 2px at 200px 150px, #00aaff, transparent),
+    radial-gradient(2px 2px at 300px 80px, #99ffff, transparent),
+    radial-gradient(2px 2px at 500px 300px, #66ffff, transparent),
+    radial-gradient(2px 2px at 700px 500px, #00ffff, transparent);
+  background-repeat: repeat;
+  animation: moveStars 80s linear infinite;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+/* 🌫️ Nebula Cloud Layer */
+.nebula {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 150, 255, 0.15), transparent 70%),
+              radial-gradient(circle at 70% 40%, rgba(255, 0, 255, 0.1), transparent 80%),
+              radial-gradient(circle at 30% 60%, rgba(0, 255, 255, 0.12), transparent 80%);
+  animation: moveNebula 100s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* ✨ Star drift animation */
+@keyframes moveStars {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-500px, 500px, 0); }
+}
+
+/* 🌫️ Nebula slow float */
+@keyframes moveNebula {
+  0% { transform: scale(1) translate(0, 0); opacity: 0.7; }
+  50% { transform: scale(1.1) translate(30px, 40px); opacity: 0.8; }
+  100% { transform: scale(1) translate(0, 0); opacity: 0.7; }
+}
+/* ===========================================================
+   ⚡ AI PARTICLE NETWORK EFFECT
+   =========================================================== */
+
+#particleNetwork {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Stars ke upar, text ke neeche */
+  pointer-events: none;
+  background: transparent;
+}
+/* ===========================================================
+   ⚡ AI LIGHT BEAM ENTRANCE ANIMATION
+   =========================================================== */
+#light-beam {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0,255,255,0.9) 0%, rgba(0,0,0,0) 80%);
+  opacity: 0;
+  transform: scale(0.8);
+  z-index: 999;
+  animation: beamFlash 3s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes beamFlash {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(20px);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: blur(10px);
+  }
+  75% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* Text Fade-in Enhancement */
+header h1, section h2, p, nav ul li a {
+  opacity: 0;
+  animation: fadeInText 2.5s ease-out 2.5s forwards;
+}
+
+@keyframes fadeInText {
+  to { opacity: 1; }
+}
+/* ===========================================================
+   🌌 INTERACTIVE UNIVERSE BACKGROUND
+   =========================================================== */
+#universeCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+/* ===========================================================
+   🎤 VOICE CONTROL BUTTON DESIGN
+   =========================================================== */
+#voiceControl {
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  z-index: 9999;
+}
+
+#micBtn {
+  background: radial-gradient(circle at 30% 30%, #00ffff, #0066ff);
+  color: #fff;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 0 20px #00ccff, 0 0 50px #0099ff inset;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#micBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px #00ffff, 0 0 70px #00ccff inset;
+}
+// 🎤 Speak to Universe Button Control
+const speakButton = document.querySelector('.speak-btn');
+let recognition;
+
+// Check if browser supports speech recognition
+if ('webkitSpeechRecognition' in window) {
+  recognition = new webkitSpeechRecognition();
+  recognition.lang = 'en-US';
+  recognition.continuous = false;
+  recognition.interimResults = false;
+
+  speakButton.addEventListener('click', () => {
+    speakButton.innerText = "🎧 Listening...";
+    recognition.start();
+  });
+
+  recognition.onresult = (event) => {
+    const transcript = event.results[0][0].transcript.toLowerCase();
+    console.log("User said:", transcript);
+
+    // Voice commands
+    if (transcript.includes("hello")) {
+      speakText("Hello Asif! Welcome back to your universe.");
+      glowEffect();
+    } 
+    else if (transcript.includes("light")) {
+      speakText("Activating cosmic lights!");
+      document.body.style.background = "radial-gradient(circle, #001f3f, #000)";
+    } 
+    else {
+      speakText("I didn’t understand that. Please try again.");
+    }
+
+    speakButton.innerText = "🎤 Speak to Universe";
+  };
+
+  recognition.onerror = () => {
+    speakButton.innerText = "🎤 Speak to Universe";
+    speakText("Sorry, I couldn’t hear properly.");
+  };
+}
+
+// Voice output (Speech)
+function speakText(text) {
+  const speech = new SpeechSynthesisUtterance(text);
+  speech.rate = 1;
+  speech.pitch = 1;
+  speech.lang = 'en-US';
+  window.speechSynthesis.speak(speech);
+}
+
+// Small glow animation trigger
+function glowEffect() {
+  const planet = document.querySelector('.planet');
+  if (planet) {
+    planet.style.filter = "drop-shadow(0 0 40px cyan)";
+    setTimeout(() => {
+      planet.style.filter = "drop-shadow(0 0 20px cyan)";
+    }, 2000);
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 80px 10%;
+  text-align: center;
+  color: #fff;
+}
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.service-box {
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid #00ffff55;
+  padding: 25px 40px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  transition: all 0.4s;
+}
+
+.service-box:hover {
+  background: #00ffff33;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffff66;
+}
+/* === CONTACT SECTION === */
+.contact-section {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+}
+
+.contact-section h2 {
+  color: #00bfff;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 25px #00bfff;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00ffff66;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 10px #00ffff99;
+}
+
+.contact-form button {
+  background: linear-gradient(90deg, #00bfff, #0088ff);
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(90deg, #00ffff, #00bfff);
+  box-shadow: 0 0 25px #00ffff99;
+}
+
+/* === FOOTER === */
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 40px 10px 20px;
+  color: #ccc;
+  border-top: 1px solid #00ffff33;
+}
+
+footer a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* === SECTION SPACING === */
+#about, #contact, footer {
+  margin-top: 80px;
+}
+/* === FIXED CONTACT SECTION AT BOTTOM === */
+.contact-section {
+  position: fixed;
+  bottom: 90px; /* footer ke upar thoda gap */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #00ffff55;
+  box-shadow: 0 0 25px #00ffff55;
+  border-radius: 20px;
+  padding: 40px 20px;
+  z-index: 10;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+/* Contact Us Heading */
+.contact-section h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #00bfff;
+  text-shadow: 0 0 25px #00ffff;
+}
+
+/* Contact Inputs */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00ffff66;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 15px #00ffff99;
+}
+
+/* Send Button */
+.contact-form button {
+  background: linear-gradient(90deg, #00bfff, #00ffff);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(90deg, #00ffff, #00bfff);
+  box-shadow: 0 0 25px #00ffff;
+}
+
+/* Footer always fixed below contact form */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  text-align: center;
+  padding: 15px 10px;
+  color: #ccc;
+  border-top: 1px solid #00ffff44;
+  z-index: 9;
+}
+
+footer a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-shadow: 0 0 10px #00ffff;
+}
+/* 🧩 Fix Footer Animation Overlap */
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+footer p, footer div {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-words {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #00ffff;
+  font-size: 1rem;
+  font-weight: 500;
+  background: transparent;
+  animation: scrollWords 15s linear infinite;
+  z-index: 0;
+}
+
+@keyframes scrollWords {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+ 
+}
+/* ✅ Final Contact Section Fix */
+.contact-section {
+  position: relative;           /* fixed se hata diya */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 100px auto;           /* center me rakha */
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 5;
+}
+
+.contact-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #00ffff;
+  text-shadow: 0 0 20px #00ccff;
+  margin-bottom: 25px;
+}
+
+.contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(30, 30, 30, 0.9);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 10px #00ffff;
+  border: 1px solid #00ccff;
+}
+
+.contact-form button {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #00bcd4, #0044ff);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+/* Footer fix — ensure contact stays above footer */
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+  font-size: 0.9rem;
+  z-index: 2;
+}
+/* 🌌 Contact Section — fixed alignment remove, full responsive fix */
+.contact-section {
+  position: static;              /* no fixed or absolute */
+  width: 100%;
+  max-width: 600px;
+  margin: 120px auto 60px auto;  /* footer ke upar spacing */
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+.contact-section h2 {
+  text-align: center;
+  color: #00ffff;
+  font-size: 2rem;
+  text-shadow: 0 0 20px #00ccff;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(30, 30, 30, 0.9);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 10px #00ffff;
+  border: 1px solid #00ccff;
+}
+
+.contact-form button {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+/* ✅ Footer fix — stay at bottom */
+footer {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background: black;
+  color: #aaa;
+  padding: 25px 10px;
+  font-size: 0.9rem;
+  margin-top: 60px;
+}
+.chat-section {
+  text-align: center;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  color: white;
+}
+
+.chat-box {
+  width: 60%;
+  margin: 20px auto;
+  height: 300px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: left;
+}
+
+.chat-box div {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.chat-box .user {
+  background: rgba(0, 255, 255, 0.2);
+  text-align: right;
+}
+
+.chat-box .ai {
+  background: rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+.chat-input {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.chat-input input {
+  width: 40%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  border: none;
+  background: cyan;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chat-input button:hover {
+  background: white;
+}
+/* 🌟 Floating Chat Bubble */
+#chatBubble {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #00ffff, #0066ff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+#chatBubble:hover {
+  transform: scale(1.1);
+}
+
+/* 🌌 Popup Chat Window */
+#chatPopup {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 350px;
+  height: 450px;
+  background: rgba(10, 20, 40, 0.95);
+  border: 1px solid cyan;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.hidden {
+  display: none;
+}
+
+.chat-header {
+  background: linear-gradient(90deg, #00ccff, #0066ff);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#closeChat {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  color: white;
+  font-size: 14px;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  margin-right: 10px;
+}
+
+.chat-input button {
+  border: none;
+  padding: 8px 12px;
+  background: linear-gradient(90deg, #00ffff, #0099ff);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.hidden {
+  display: none !important;
+}
+/* Floating chat bubble */
+.chat-bubble {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  font-size: 28px;
+  background: #00bfff;
+  border-radius: 50%;
+  padding: 14px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  z-index: 1000;
+  transition: transform 0.2s ease;
+}
+.chat-bubble:hover {
+  transform: scale(1.1);
+}
+
+/* Chat popup box */
+.chat-popup {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 340px;
+  background: rgba(5, 15, 25, 0.95);
+  border: 1px solid #00bfff;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+  padding: 15px;
+  z-index: 1001;
+  color: #fff;
+}
+
+/* Header */
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #00bfff;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+}
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #000;
+  cursor: pointer;
+}
+
+/* Input area */
+.chat-input {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+}
+.chat-input button {
+  background: #00bfff;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+ /* 🌍 Universe & Tech News Design */
+.news-section {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #020024, #090979, #00d4ff);
+  color: white;
+  text-align: center;
+}
+
+.news-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 15px cyan;
+}
+
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.news-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid cyan;
+  border-radius: 15px;
+  width: 300px;
+  padding: 15px;
+  text-align: left;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.news-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px cyan;
+}
+
+.news-card a {
+  color: #00ffff;
+  text-decoration: none;
+}
+/* 🌌 Real Asif Universe — Floating News Popup */
+.news-btn {
+  position: fixed;
+  bottom: 90px;
+  left: 30px;
+  background: linear-gradient(145deg, #00ffff, #0077ff);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 0 25px cyan;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.news-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 40px #00ffff;
+}
+
+.news-popup {
+  position: fixed;
+  bottom: 160px;
+  left: 30px;
+  width: 350px;
+  height: 400px;
+  background: rgba(0, 0, 20, 0.95);
+  border: 2px solid cyan;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.4s ease-in-out;
+  z-index: 1000;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #0033ff, #00ffff);
+  padding: 10px 15px;
+  font-weight: bold;
+}
+
+.popup-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup-news {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.popup-news::-webkit-scrollbar {
+  width: 6px;
+}
+
+.popup-news::-webkit-scrollbar-thumb {
+  background: cyan;
+  border-radius: 10px;
+}
+
+.news-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid cyan;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.news-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px cyan;
+}
+
+.news-card a {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+ #voiceAssistant {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #0b3d91, #00d4ff);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#micButton {
+  font-size: 18px;
+  background: white;
+  color: #0b3d91;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#micButton:hover {
+  background: #0b3d91;
+  color: white;
+}
+
+#aiResponse {
+  margin-top: 10px;
+  font-size: 16px;
+}
+const micButton = document.getElementById("micButton");
+const aiResponse = document.getElementById("aiResponse");
+
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (!SpeechRecognition) {
+  aiResponse.innerText = "❌ Voice recognition not supported in this browser.";
+} else {
+  constrecognition = new SpeechRecognition();
+  recognition.lang = "en-IN";
+  recognition.continuous = false;
+  recognition.interimResults = false;
+
+  micButton.addEventListener("click", () => {
+    aiResponse.innerText = "🎧 Listening...";
+    recognition.start();
+  });
+
+  recognition.onresult = function (event) {
+    const userSpeech = event.results[0][0].transcript.toLowerCase();
+    aiResponse.innerText = "You said: " + userSpeech;
+    processCommand(userSpeech);
+  };
+
+  recognition.onerror = function (event) {
+    aiResponse.innerText = "⚠️ Error: " + event.error;
+  };
+}
+
+function speak(text) {
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "en-IN";
+  utterance.rate = 1;
+  utterance.pitch = 1;
+  speechSynthesis.speak(utterance);
+}
+
+function processCommand(command) {
+  if (command.includes("hello")) {
+    speak("Hello! I am Real Asif Universe Global AI. How can I help you?");
+  } else if (command.includes("time")) {
+    const time = new Date().toLocaleTimeString();
+    speak("The time is " + time);
+  } else if (command.includes("youtube")) {
+    speak("Opening YouTube!");
+    window.open("https://youtube.com", "_blank");
+  } else if (command.includes("weather")) {
+    speak("Sorry, weather service is under maintenance for now.");
+  } else if (command.includes("joke")) {
+    speak("Here’s a cosmic joke! Why did the astronaut break up with the moon? Because it needed space!");
+  } else if (command.includes("bye") || command.includes("exit")) {
+    speak("Goodbye from Real Asif Universe Global AI. Keep shining like a star!");
+  } else {
+    speak("I didn’t quite get that. Can you repeat?");
+  }
+}
+
+
+ 
+ 
