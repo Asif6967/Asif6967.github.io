@@ -1613,6 +1613,76 @@ function processCommand(command) {
   }
 }
 
+/* 🌍 Responsive design for mobile devices */
+@media (max-width: 768px) {
+
+  /* Navbar fix */
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+    display: block;
+  }
+
+  /* Hero section */
+  .hero {
+    padding: 30px 10px;
+    text-align: center;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  /* Chat button fix */
+  .chat-button {
+    bottom: 20px;
+    right: 20px;
+    transform: scale(0.9);
+  }
+
+  /* Background and layout fix */
+  body {
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Text centering and wrapping */
+  .content, .intro-text {
+    padding: 10px;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  /* Footer text smaller */
+  footer {
+    font-size: 12px;
+    text-align: center;
+  }
+}
 
  
  
