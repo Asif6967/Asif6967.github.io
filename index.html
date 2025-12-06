@@ -1,5 +1,7 @@
  <!DOCTYPE html>
 <html lang="en">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <head>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9381706139191072"
      crossorigin="anonymous"></script>
@@ -63,7 +65,7 @@
   <section id="services" class="fade-section reveal">
     <h2>Our Services</h2>
     <div class="service-container">
-      <div class="service-box">🌐 Web Solutions</div>
+       
       <div class="service-box">🤖 Artificial Intelligence</div>
       <div class="service-box">🎓 Digital Learning</div>
     </div>
@@ -74,8 +76,7 @@
   <p>Our cutting-edge creations from Real Asif Universe Global.</p>
 
   <div class="service-container">
-    <div class="service-box">🤖 AI Chat Assistant</div>
-    <div class="service-box">🌐 Smart Web Platform</div>
+     
     <div class="service-box">📡 Real-Time News Engine</div>
     <div class="service-box">🎙️ Voice Interactive System</div>
   </div>
@@ -97,7 +98,7 @@
     </div>
 
     <div class="service-box">
-      🛰️ <strong>Nova</strong> — Creative Developer<br>
+      
       <small>Designs futuristic user experiences and visual systems.</small>
     </div>
   </div>
@@ -171,18 +172,7 @@
     </div>
   </div>
 </section>
-
-
-  <!-- 📩 CONTACT SECTION -->
-  <section id="contact" class="contact-section">
-    <h2>Contact Us</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+ 
 
   <!-- 🌟 FLOATING CHATBOT -->
   <div id="chatBubble" style="position: fixed; bottom: 25px; right: 25px; 
@@ -229,6 +219,97 @@
 
 <!-- Floating News Button -->
 <button class="news-btn" id="openNews">🛰️</button>
+<section id="contact" style="background:black; padding:60px 5%; text-align:center;">
+  <h2 style="color:cyan; text-shadow:0 0 25px cyan; font-size:2rem;">
+    📩 Contact Real Asif Universe Global
+  </h2>
+  <p style="color:#ccc; margin-bottom:20px;">
+    Have questions or ideas? Let’s build the future together 🚀
+  </p>
+
+  <form action="https://getform.io/f/ajjdeppa" method="POST"
+        style="max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px;
+               background:rgba(255,255,255,0.05); border:1px solid cyan; border-radius:15px;
+               box-shadow:0 0 25px cyan; padding:25px;">
+
+    <input type="text" name="name" placeholder="Your Full Name" required
+           style="padding:12px; border-radius:8px; border:none; background:#001a33; color:white; font-size:1rem;">
+
+    <input type="email" name="email" placeholder="Your Email Address" required
+           style="padding:12px; border-radius:8px; border:none; background:#001a33; color:white; font-size:1rem;">
+
+    <textarea name="message" placeholder="Your Message..." rows="5" required
+              style="padding:12px; border-radius:8px; border:none; background:#001a33; color:white; font-size:1rem;"></textarea>
+
+    <!-- hidden anti-spam -->
+    <input type="hidden" name="_gotcha" style="display:none !important">
+
+    <!-- checkboxes -->
+    <label style="color:cyan; font-size:0.9rem; display:flex; align-items:center; gap:5px;">
+      <input type="checkbox" name="subscribe" value="yes" checked> Subscribe for Updates
+    </label>
+
+    <!-- select dropdown -->
+    <select name="work-experience" style="padding:12px; border-radius:8px; border:none;
+            background:#001a33; color:white; font-size:1rem;">
+      <option value="one-year">0–1 Years Experience</option>
+      <option value="one-five-years">1–5 Years Experience</option>
+    </select>
+
+    <!-- submit button -->
+    <button type="submit"
+            style="background:cyan; color:black; font-weight:bold; padding:12px; border:none;
+                   border-radius:8px; cursor:pointer; font-size:1rem; box-shadow:0 0 15px cyan;
+                   transition:0.3s;">
+      🚀 Send Message
+    </button>
+  </form>
+</section>
+
+<script>
+document.querySelector("form").addEventListener("submit", function(e) {
+  alert("✅ Your message has been sent successfully to Real Asif Universe Global!");
+});
+</script>
+<section id="upload" style="background:black; color:white; padding:60px 5%; text-align:center;">
+  <h2 style="color:cyan; text-shadow:0 0 20px cyan;">📁 Upload Your File</h2>
+  <p style="color:#aaa;">Send documents, reports, or media files securely to Real Asif Universe Global 🌐</p>
+
+  <form action="https://getform.io/f/ajjdeppa" method="POST" enctype="multipart/form-data"
+        style="max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px;
+               background:rgba(0,255,255,0.05); border:1px solid cyan; border-radius:15px;
+               padding:25px; box-shadow:0 0 25px cyan;">
+
+    <input type="text" name="full-name" placeholder="Your Full Name" required
+           style="padding:12px; border:none; border-radius:8px; background:#001a33; color:white; font-size:1rem;">
+
+    <input type="email" name="email" placeholder="Your Email Address" required
+           style="padding:12px; border:none; border-radius:8px; background:#001a33; color:white; font-size:1rem;">
+
+    <textarea name="message" placeholder="Message (optional)" rows="4"
+              style="padding:12px; border:none; border-radius:8px; background:#001a33; color:white; font-size:1rem;"></textarea>
+
+    <label style="color:cyan; text-align:left;">📎 Attach File:</label>
+    <input type="file" name="file" required
+           style="background:#001a33; color:white; padding:10px; border-radius:8px;">
+
+    <!-- hidden anti-spam -->
+    <input type="hidden" name="_gotcha" style="display:none !important">
+
+    <button type="submit"
+            style="background:cyan; color:black; font-weight:bold; padding:12px; border:none;
+                   border-radius:8px; cursor:pointer; font-size:1rem; box-shadow:0 0 15px cyan;
+                   transition:0.3s;">
+      🚀 Upload & Send
+    </button>
+  </form>
+</section>
+
+<script>
+document.querySelector("#upload form").addEventListener("submit", function() {
+  alert("✅ File uploaded successfully to Real Asif Universe Global!");
+});
+</script>
 
 
   <!-- 🔻 FOOTER -->
