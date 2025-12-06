@@ -1,0 +1,209 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔥 Real Asif Universe — Flash Deals</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #000820, #000);
+      color: cyan;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 10px;
+      background: rgba(0, 255, 255, 0.08);
+      box-shadow: 0 0 20px cyan;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff;
+    }
+
+    section {
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .reel-container {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      justify-content: center;
+      position: relative;
+    }
+
+    .reel {
+      display: flex;
+      gap: 20px;
+      animation: slide 30s linear infinite;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .product {
+      flex: 0 0 270px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid cyan;
+      box-shadow: 0 0 15px cyan;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #00ffff;
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .product h3 {
+      color: cyan;
+    }
+
+    .product a {
+      background: cyan;
+      color: black;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: inline-block;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 20px cyan;
+    }
+
+    .popup {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background: rgba(0,255,255,0.15);
+      border: 1px solid cyan;
+      color: cyan;
+      padding: 12px 18px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px cyan;
+      opacity: 0;
+      animation: slideInOut 6s ease-in-out forwards;
+    }
+
+    @keyframes slideInOut {
+      0% {opacity: 0; transform: translateY(20px);}
+      10%, 90% {opacity: 1; transform: translateY(0);}
+      100% {opacity: 0; transform: translateY(20px);}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>💎 Real Asif Universe — Flash Sale Deals</h1>
+  <p>🔥 Auto-updating Affiliate Products</p>
+</header>
+
+<section>
+  <h2>🚀 Flash Sale — Trending Amazon Products</h2>
+  <div class="reel-container">
+    <div class="reel" id="reel"></div>
+  </div>
+</section>
+
+<script>
+  const products = [
+    {
+      name: "AI & Business Innovation Book",
+      img: "https://m.media-amazon.com/images/I/71E5zB1qbIL._SL1500_.jpg",
+      desc: "Learn how AI is transforming industries worldwide.",
+      link: "https://amzn.to/3XE65pa"
+    },
+    {
+      name: "High-Speed Business Laptop",
+      img: "https://m.media-amazon.com/images/I/61xzuXWWozL._SL1500_.jpg",
+      desc: "Power your ideas with top performance.",
+      link: "https://amzn.to/4b4iFwc"
+    },
+    {
+      name: "Wireless Headphones 🎧",
+      img: "https://m.media-amazon.com/images/I/61j17F3C2RL._SL1500_.jpg",
+      desc: "Perfect for meetings, focus, and clarity.",
+      link: "https://amzn.to/4eTiMPH"
+    },
+    {
+      name: "Ergonomic Office Chair",
+      img: "https://m.media-amazon.com/images/I/61yUZ3XvmhL._SL1500_.jpg",
+      desc: "Comfort & posture support for long work hours.",
+      link: "https://amzn.to/4fwF9Av"
+    },
+    {
+      name: "Smart LED Monitor",
+      img: "https://m.media-amazon.com/images/I/71QWvfoOOLL._SL1500_.jpg",
+      desc: "Crisp visuals, perfect for design & productivity.",
+      link: "https://amzn.to/4glUZZB"
+    }
+  ];
+
+  function renderReel() {
+    const reel = document.getElementById("reel");
+    reel.innerHTML = "";
+    products.forEach(p => {
+      const item = document.createElement("div");
+      item.classList.add("product");
+      item.innerHTML = `
+        <img src="${p.img}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <a href="${p.link}" target="_blank">🛒 View on Amazon</a>
+      `;
+      reel.appendChild(item);
+    });
+    // Clone again for infinite loop feel
+    products.forEach(p => {
+      const item = document.createElement("div");
+      item.classList.add("product");
+      item.innerHTML = `
+        <img src="${p.img}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <a href="${p.link}" target="_blank">🛒 View on Amazon</a>
+      `;
+      reel.appendChild(item);
+    });
+  }
+
+  const messages = [
+    "💰 New visitor exploring your store!",
+    "🎧 Someone bought Wireless Headphones!",
+    "🚀 Real Asif Store just made a sale!",
+    "🔥 Laptop clicks increasing now!"
+  ];
+
+  function showPopup() {
+    const msg = messages[Math.floor(Math.random() * messages.length)];
+    const popup = document.createElement("div");
+    popup.className = "popup";
+    popup.textContent = msg;
+    document.body.appendChild(popup);
+    setTimeout(() => popup.remove(), 6000);
+  }
+
+  renderReel();
+  setInterval(showPopup, 10000);
+</script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -53,7 +53,7 @@
 
     section {
       text-align: center;
-      padding: 100px 10%;
+      padding: 80px 10%;
       line-height: 1.8;
     }
 
@@ -74,8 +74,8 @@
 
     /* 🎙️ Mic Button */
     #micGlow {
-      width: 100px;
-      height: 100px;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 30%, #00ffff, #0077ff);
       display: flex;
@@ -90,16 +90,47 @@
 
     @keyframes glow {
       0% { box-shadow: 0 0 10px #00ffff; transform: scale(1); }
-      50% { box-shadow: 0 0 40px #00ffff; transform: scale(1.15); }
+      50% { box-shadow: 0 0 40px #00ffff; transform: scale(1.1); }
       100% { box-shadow: 0 0 10px #00ffff; transform: scale(1); }
     }
 
     #aiReply {
-      margin-top: 20px;
+      margin-top: 25px;
       color: #00ffff;
       font-style: italic;
       text-shadow: 0 0 15px #00ffff;
       min-height: 30px;
+    }
+
+    textarea {
+      width: 70%;
+      background: #001a33;
+      color: white;
+      border: none;
+      outline: none;
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      resize: none;
+    }
+
+    #askBtn {
+      margin-top: 15px;
+      padding: 10px 25px;
+      border: none;
+      background: #00ffff;
+      color: black;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #00ffff;
+      transition: 0.3s;
+    }
+
+    #askBtn:hover {
+      background: #00ccff;
+      box-shadow: 0 0 35px #00ffff;
     }
 
     footer {
@@ -115,6 +146,7 @@
       nav ul { gap: 15px; font-size: 0.9rem; }
       h1 { font-size: 1.8rem; }
       marquee { font-size: 1rem; }
+      textarea { width: 90%; }
     }
   </style>
 </head>
@@ -133,20 +165,18 @@
 
   <section id="about">
     <h1>💫 About Real Asif Universe Global</h1>
-
-    <marquee behavior="scroll" direction="left" scrollamount="5">
-      🌐 Real Asif Universe Global — Empowering humanity with Artificial Intelligence, digital transformation, and futuristic learning. 
-      Building a smarter, connected, and innovative world for tomorrow. 🚀
-    </marquee>
-
+    <marquee>🌐 Empowering humanity with Artificial Intelligence and futuristic innovation 🚀</marquee>
     <p style="max-width:900px; margin:auto; color:#ccc; font-size:1.1rem;">
       <strong style="color:#00ffff;">Real Asif Universe Global</strong> is a futuristic ecosystem combining 
-      <span style="color:#ff00ff;">Technology, AI, and Education</span> to transform innovation across the world.  
-      Our mission is to connect intelligence with imagination, guiding businesses and individuals toward a visionary future.
+      <span style="color:#ff00ff;">Technology, AI, and Education</span> to transform innovation worldwide.  
+      Our mission is to connect intelligence with imagination, guiding humanity toward a visionary future.
     </p>
 
     <div id="micGlow">🎤</div>
-    <p id="aiReply">Click the mic & ask me anything about Real Asif Universe Global...</p>
+    <p id="aiReply">Click the mic or type below to talk with your AI Assistant...</p>
+
+    <textarea id="userInput" rows="3" placeholder="Type your question..."></textarea><br>
+    <button id="askBtn">Ask</button>
   </section>
 
   <footer>
@@ -156,7 +186,10 @@
   <script>
     const mic = document.getElementById("micGlow");
     const aiReply = document.getElementById("aiReply");
+    const btn = document.getElementById("askBtn");
+    const input = document.getElementById("userInput");
 
+    // 🎙️ Speak Function
     function speak(text) {
       const utter = new SpeechSynthesisUtterance(text);
       utter.lang = "en-US";
@@ -166,24 +199,11 @@
       speechSynthesis.speak(utter);
     }
 
-    async function checkPermissions() {
-      try {
-        await navigator.mediaDevices.getUserMedia({ audio: true });
-        speak("Welcome to Real Asif Universe Global. I am your AI Assistant. Ask me anything!");
-        aiReply.textContent = "🎧 I’m ready to listen.";
-      } catch {
-        aiReply.textContent = "⚠️ Please allow microphone access to talk with me.";
-        speak("Please allow microphone access to talk with me.");
-      }
-    }
-
-    checkPermissions();
-
+    // 🎤 Speech Recognition
     if ("webkitSpeechRecognition" in window) {
       const recognition = new webkitSpeechRecognition();
       recognition.lang = "en-US";
       recognition.continuous = false;
-      recognition.interimResults = false;
 
       mic.addEventListener("click", async () => {
         try {
@@ -196,57 +216,38 @@
       });
 
       recognition.onresult = (event) => {
-        const query = event.results[0][0].transcript.toLowerCase();
+        const query = event.results[0][0].transcript.trim();
         aiReply.textContent = `🗣️ You said: "${query}"`;
-
-        let response = "That's interesting! Real Asif Universe Global is all about innovation and AI.";
-        if (query.includes("hello")) response = "Hello and welcome to Real Asif Universe Global!";
-        else if (query.includes("who are you")) response = "I am your AI assistant, created by Real Asif Universe Global.";
-        else if (query.includes("what is real asif universe")) response = "It's a futuristic digital platform for innovation, AI, and global learning.";
-        else if (query.includes("how are you")) response = "I'm fully functional and glowing bright, Asif!";
-        else if (query.includes("thank you")) response = "You're welcome! Keep exploring Real Asif Universe Global.";
-
-        aiReply.textContent = response;
-        speak(response);
+        sendToAI(query);
       };
     } else {
-      aiReply.textContent = "❌ Speech recognition not supported on this browser.";
+      aiReply.textContent = "❌ Speech recognition not supported.";
     }
-  </script>
-  <!-- 💬 ChatGPT-like Real AI Assistant -->
-<section id="aiChat" style="text-align:center; padding:60px;">
-  <h2 style="color:#00ffff;">🤖 Ask Me Anything!</h2>
-  <p style="color:#ccc;">Speak or type your question — I'll explain in detail.</p>
 
-  <textarea id="userInput" rows="3" style="width:70%; padding:10px; border-radius:8px; border:none; outline:none; background:#001a33; color:white; font-size:1.1rem;"></textarea><br>
-  <button id="askBtn" style="margin-top:15px; padding:10px 25px; border:none; background:#00ffff; color:black; font-weight:bold; border-radius:20px; cursor:pointer;">Ask</button>
+    // 🧠 Send to Flask AI Backend
+    async function sendToAI(query) {
+      aiReply.textContent = "🤖 Thinking...";
+      try {
+        const res = await fetch("http://127.0.0.1:5000/api/ai", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: query })
+        });
+        const data = await res.json();
+        aiReply.textContent = data.reply;
+        speak(data.reply);
+      } catch {
+        aiReply.textContent = "⚠️ AI server not responding. Please check app.py.";
+      }
+    }
 
-  <div id="aiResponse" style="margin-top:30px; color:#00ffff; font-size:1.1rem; max-width:80%; margin:auto; text-align:left; background:rgba(255,255,255,0.05); padding:20px; border-radius:10px; box-shadow:0 0 20px #00ffff;"></div>
-</section>
-
-<script>
-const btn = document.getElementById("askBtn");
-const input = document.getElementById("userInput");
-const output = document.getElementById("aiResponse");
-
-btn.addEventListener("click", async () => {
-  const question = input.value.trim();
-  if (!question) return alert("Please ask something...");
-
-  output.innerHTML = "💭 Thinking...";
-  try {
-    const res = await fetch("http://127.0.0.1:5000/api/ai", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: question })
+    // 🖊️ Manual Text Input
+    btn.addEventListener("click", () => {
+      const question = input.value.trim();
+      if (!question) return alert("Please ask something...");
+      sendToAI(question);
+      input.value = "";
     });
-    const data = await res.json();
-    output.innerHTML = `<strong>AI:</strong> ${data.reply}`;
-  } catch (err) {
-    output.innerHTML = "⚠️ Connection error.";
-  }
-});
-</script>
-
+  </script>
 </body>
 </html>

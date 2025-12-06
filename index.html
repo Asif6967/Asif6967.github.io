@@ -20,11 +20,12 @@
   <ul>
    
      <li><a href="index.html">Home</a></li>
-   <li><a href="about.html">About</a></li>
-   
-     <li><a href="contact.html">Contact</a></li>
-     <li><a href="business.html" target="_blank">Business Insights</a></li>
+    
 
+     <li><a href="contact.html">Contact</a></li>
+     <li><a href="business-insights.html">Business Insights</a></li>
+
+ <li><a href="about.html">About</a></li>
      <li><a href="privacy.html">Privacy Policy</a></li>
   </ul>
 </nav>
@@ -320,6 +321,57 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+<script>
+  const voiceBtn = document.getElementById("voiceBtn");
+  const aiReply = document.getElementById("aiReply");
+
+  // 🎙️ Voice Recognition Setup
+  const synth = window.speechSynthesis;
+  let recognition;
+
+  if ("webkitSpeechRecognition" in window) {
+    recognition = new webkitSpeechRecognition();
+    recognition.lang = "en-US";
+    recognition.interimResults = false;
+
+    voiceBtn.addEventListener("click", () => {
+      aiReply.textContent = "🎧 Listening...";
+      recognition.start();
+    });
+
+    recognition.onresult = async (event) => {
+      const userText = event.results[0][0].transcript;
+      aiReply.textContent = `You said: "${userText}"`;
+
+      // 🧠 Send text to Flask AI
+      const response = await fetch("http://127.0.0.1:5000/api/ai", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userText }),
+      });
+
+      const data = await response.json();
+      aiReply.textContent = data.reply;
+      speak(data.reply);
+    };
+
+    recognition.onerror = () => {
+      aiReply.textContent = "⚠️ Sorry, I couldn't hear you. Try again.";
+    };
+  } else {
+    aiReply.textContent = "Speech recognition not supported in this browser.";
+  }
+
+  // 🎧 Speak Function
+  function speak(text) {
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.rate = 1.1;
+    utter.pitch = 1.1;
+    utter.volume = 1;
+    synth.cancel();
+    synth.speak(utter);
+  }
+</script>
 
 </body>
 
