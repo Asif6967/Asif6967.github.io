@@ -70,6 +70,31 @@
       letter-spacing: 1px;
     }
 
+    #voiceBtn {
+      margin-top: 40px;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      color: #fff;
+      background: linear-gradient(45deg, #00ffff, #0077ff);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #00ffff;
+      transition: 0.3s;
+    }
+
+    #voiceBtn:hover {
+      background: linear-gradient(45deg, #00ccff, #0033ff);
+      box-shadow: 0 0 40px #00ffff;
+    }
+
+    #aiReply {
+      margin-top: 25px;
+      color: #00ffff;
+      font-style: italic;
+      text-shadow: 0 0 15px #00ffff;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -97,15 +122,9 @@
   <section id="about">
     <h1>💫 About Real Asif Universe Global</h1>
 
-    <!-- 🌐 MAIN MARQUEE -->
     <marquee behavior="scroll" direction="left" scrollamount="5">
       🌐 Real Asif Universe Global — Empowering people and businesses with Artificial Intelligence, 
       digital transformation, and futuristic education. Building a smarter, connected, and innovative world for the next generation. 🚀
-    </marquee>
-
-    <!-- 💡 SECOND MARQUEE -->
-    <marquee behavior="alternate" direction="right" scrollamount="4" style="color:#ff00ff; text-shadow:0 0 20px #ff00ff;">
-      💡 Innovation | 🌍 Leadership | 🤖 Artificial Intelligence | 🎓 Digital Knowledge | 🚀 Global Vision
     </marquee>
 
     <p style="max-width:900px; margin:auto; color:#ccc; font-size:1.1rem;">
@@ -114,14 +133,167 @@
       Our mission is to inspire humanity through intelligence, creativity, and purposeful design.
     </p>
 
-    <p style="margin-top:20px; color:#ccc;">
-      We focus on developing next-gen AI tools, digital learning platforms, and global leadership models — 
-      bringing together science, ethics, and imagination to build the world of tomorrow.
-    </p>
+    <button id="voiceBtn">🎙️ Talk to AI Assistant</button>
+    <p id="aiReply">Click the button and ask me anything about Real Asif Universe Global...</p>
   </section>
+<script>
+  // 🎧 Voice Greeting on Page Load
+  window.addEventListener("load", () => {
+    const greeting = new SpeechSynthesisUtterance("Welcome to Real Asif Universe Global.");
+    greeting.rate = 1;
+    greeting.pitch = 1.1;
+    greeting.volume = 1;
+    speechSynthesis.speak(greeting);
+  });
+
+  const voiceBtn = document.getElementById("voiceBtn");
+  const aiReply = document.getElementById("aiReply");
+  const synth = window.speechSynthesis;
+
+  // 🎤 Microphone Permission Check
+  if (!('webkitSpeechRecognition' in window)) {
+    aiReply.textContent = "❌ Speech recognition not supported in this browser.";
+  } else {
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.continuous = false;
+
+    voiceBtn.addEventListener("click", async () => {
+      try {
+        await navigator.mediaDevices.getUserMedia({ audio: true });
+        aiReply.textContent = "🎧 Listening...";
+        voiceBtn.textContent = "🌀 Listening...";
+        recognition.start();
+      } catch (err) {
+        aiReply.textContent = "⚠️ Please allow microphone access in your browser settings.";
+        console.error("Mic permission error:", err);
+      }
+    });
+
+    recognition.onresult = (event) => {
+      const query = event.results[0][0].transcript.toLowerCase();
+      aiReply.textContent = `You said: "${query}"`;
+      voiceBtn.textContent = "🎙️ Talk to AI Assistant";
+      respondToQuery(query);
+    };
+
+    recognition.onerror = (event) => {
+      aiReply.textContent = "⚠️ Could not hear you. Please try again.";
+      voiceBtn.textContent = "🎙️ Talk to AI Assistant";
+      console.error("Speech Recognition Error:", event.error);
+    };
+  }
+
+  // 🗣️ Speak Function
+  function speak(text) {
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.rate = 1;
+    utter.pitch = 1.1;
+    utter.volume = 1;
+    synth.cancel();
+    synth.speak(utter);
+  }
+
+  // 💬 Simple AI Responses
+  function respondToQuery(query) {
+    let response = "";
+
+    if (query.includes("hello")) {
+      response = "Hello! Welcome to Real Asif Universe Global.";
+    } else if (query.includes("who are you")) {
+      response = "I am your AI assistant, designed by Real Asif Universe Global to help you explore innovation.";
+    } else if (query.includes("what is real asif universe")) {
+      response = "It is a global platform uniting Artificial Intelligence, Education, and Technology to empower the world.";
+    } else if (query.includes("how are you")) {
+      response = "I'm glowing bright and operational as always, Commander Asif!";
+    } else if (query.includes("thank you")) {
+      response = "You're most welcome! Keep innovating with Real Asif Universe Global.";
+    } else {
+      response = "That's interesting! Real Asif Universe Global is all about innovation and knowledge.";
+    }
+
+    aiReply.textContent = response;
+    speak(response);
+  }
+</script>
 
   <footer>
     <p>© 2025 Real Asif Universe Global | Innovation Beyond Earth 🌍</p>
   </footer>
+
+  <script>
+    // 🎧 Voice Greeting on Page Load
+    window.addEventListener("load", () => {
+      const greeting = new SpeechSynthesisUtterance("Welcome to Real Asif Universe Global.");
+      greeting.rate = 1;
+      greeting.pitch = 1.1;
+      greeting.volume = 1;
+      speechSynthesis.speak(greeting);
+    });
+
+    // 🎤 AI Voice Interaction System
+    const voiceBtn = document.getElementById("voiceBtn");
+    const aiReply = document.getElementById("aiReply");
+    const synth = window.speechSynthesis;
+
+    let recognition;
+    if ('webkitSpeechRecognition' in window) {
+      recognition = new webkitSpeechRecognition();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.continuous = false;
+
+      voiceBtn.addEventListener("click", () => {
+        aiReply.textContent = "🎧 Listening...";
+        voiceBtn.textContent = "🌀 Listening...";
+        recognition.start();
+      });
+
+      recognition.onresult = (event) => {
+        const query = event.results[0][0].transcript.toLowerCase();
+        aiReply.textContent = `You said: "${query}"`;
+        voiceBtn.textContent = "🎙️ Talk to AI Assistant";
+        respondToQuery(query);
+      };
+
+      recognition.onerror = () => {
+        aiReply.textContent = "⚠️ Could not hear you. Please try again.";
+        voiceBtn.textContent = "🎙️ Talk to AI Assistant";
+      };
+    } else {
+      aiReply.textContent = "Speech recognition not supported on this browser.";
+    }
+
+    function speak(text) {
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.rate = 1;
+      utter.pitch = 1.1;
+      utter.volume = 1;
+      synth.cancel();
+      synth.speak(utter);
+    }
+
+    function respondToQuery(query) {
+      let response = "";
+
+      if (query.includes("hello")) {
+        response = "Hello! Welcome to Real Asif Universe Global.";
+      } else if (query.includes("who are you")) {
+        response = "I am your AI assistant, designed by Real Asif Universe Global to help you explore innovation.";
+      } else if (query.includes("what is real asif universe")) {
+        response = "It is a global platform uniting Artificial Intelligence, Education, and Technology to empower the world.";
+      } else if (query.includes("how are you")) {
+        response = "I'm glowing bright and operational as always, Commander Asif!";
+      } else if (query.includes("thank you")) {
+        response = "You're most welcome! Keep innovating with Real Asif Universe Global.";
+      } else {
+        response = "That's interesting! Real Asif Universe Global is all about innovation and knowledge.";
+      }
+
+      aiReply.textContent = response;
+      speak(response);
+    }
+  </script>
 </body>
 </html>
