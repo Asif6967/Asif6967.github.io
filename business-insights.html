@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🔥 Real Asif Universe — Flash Deals</title>
+  <title>🌌 Real Asif Universe Global — Flash Deals</title>
   <style>
     body {
       margin: 0;
@@ -13,22 +13,49 @@
       overflow-x: hidden;
     }
 
+    /* 🌌 Header Section */
     header {
       text-align: center;
-      padding: 30px 10px;
+      padding: 25px 10px;
       background: rgba(0, 255, 255, 0.08);
       box-shadow: 0 0 20px cyan;
+      border-bottom: 1px solid cyan;
     }
 
     header h1 {
       font-size: 2rem;
       color: #00ffff;
-      text-shadow: 0 0 15px #00ffff;
+      text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
+    header p {
+      color: #aaa;
+      font-size: 1rem;
+    }
+
+    /* 🔥 Marquee Brand Banner */
+    .brand-banner {
+      background: linear-gradient(90deg, #00ffff, #0077ff, #00ffff);
+      color: #000;
+      font-weight: bold;
+      border-radius: 10px;
+      padding: 10px 0;
+      margin: 20px 0;
+      box-shadow: 0 0 30px #00ffff;
+      overflow: hidden;
+    }
+
+    .brand-banner marquee {
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    /* 🚀 Flash Reel */
     section {
       text-align: center;
-      padding: 30px 10px;
+      padding: 40px 10px;
     }
 
     .reel-container {
@@ -41,8 +68,8 @@
 
     .reel {
       display: flex;
-      gap: 20px;
-      animation: slide 30s linear infinite;
+      gap: 25px;
+      animation: slide 35s linear infinite;
     }
 
     @keyframes slide {
@@ -50,30 +77,35 @@
       100% { transform: translateX(-50%); }
     }
 
+    /* 🧠 Product Card */
     .product {
-      flex: 0 0 270px;
+      flex: 0 0 280px;
       background: rgba(255,255,255,0.05);
       border: 1px solid cyan;
-      box-shadow: 0 0 15px cyan;
+      box-shadow: 0 0 20px cyan;
       border-radius: 15px;
       padding: 20px;
       text-align: center;
       transition: 0.3s;
+      position: relative;
+      overflow: hidden;
     }
 
     .product:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 30px #00ffff;
+      box-shadow: 0 0 40px #00ffff;
     }
 
     .product img {
       width: 100%;
       border-radius: 10px;
       margin-bottom: 10px;
+      box-shadow: 0 0 15px cyan;
     }
 
     .product h3 {
       color: cyan;
+      font-weight: 600;
     }
 
     .product a {
@@ -86,8 +118,29 @@
       font-weight: bold;
       transition: 0.3s;
       box-shadow: 0 0 20px cyan;
+      margin-top: 10px;
     }
 
+    .product a:hover {
+      background: #00d9ff;
+      box-shadow: 0 0 40px #00ffff;
+    }
+
+    /* 🌌 Brand Tag on Product */
+    .tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: linear-gradient(45deg, #00ffff, #0077ff);
+      color: #000;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      box-shadow: 0 0 10px cyan;
+    }
+
+    /* 🪩 Popup animation */
     .popup {
       position: fixed;
       bottom: 25px;
@@ -100,6 +153,7 @@
       box-shadow: 0 0 20px cyan;
       opacity: 0;
       animation: slideInOut 6s ease-in-out forwards;
+      font-weight: 500;
     }
 
     @keyframes slideInOut {
@@ -107,14 +161,22 @@
       10%, 90% {opacity: 1; transform: translateY(0);}
       100% {opacity: 0; transform: translateY(20px);}
     }
+
   </style>
 </head>
 <body>
 
 <header>
-  <h1>💎 Real Asif Universe — Flash Sale Deals</h1>
-  <p>🔥 Auto-updating Affiliate Products</p>
+  <h1>🌌 Real Asif Universe Global — Flash Sale Deals</h1>
+  <p>🔥 Auto-updating Amazon Affiliate Products with Real Asif Branding</p>
 </header>
+
+<!-- Moving Brand Marquee -->
+<div class="brand-banner">
+  <marquee behavior="scroll" direction="left" scrollamount="10">
+    🌌 Real Asif Universe Global ✦ Official Partner ✦ Innovating the Future ✦ Empowering Business & AI ✦ Global Tech Affiliate ✦
+  </marquee>
+</div>
 
 <section>
   <h2>🚀 Flash Sale — Trending Amazon Products</h2>
@@ -125,36 +187,11 @@
 
 <script>
   const products = [
-    {
-      name: "AI & Business Innovation Book",
-      img: "https://m.media-amazon.com/images/I/71E5zB1qbIL._SL1500_.jpg",
-      desc: "Learn how AI is transforming industries worldwide.",
-      link: "https://amzn.to/3XE65pa"
-    },
-    {
-      name: "High-Speed Business Laptop",
-      img: "https://m.media-amazon.com/images/I/61xzuXWWozL._SL1500_.jpg",
-      desc: "Power your ideas with top performance.",
-      link: "https://amzn.to/4b4iFwc"
-    },
-    {
-      name: "Wireless Headphones 🎧",
-      img: "https://m.media-amazon.com/images/I/61j17F3C2RL._SL1500_.jpg",
-      desc: "Perfect for meetings, focus, and clarity.",
-      link: "https://amzn.to/4eTiMPH"
-    },
-    {
-      name: "Ergonomic Office Chair",
-      img: "https://m.media-amazon.com/images/I/61yUZ3XvmhL._SL1500_.jpg",
-      desc: "Comfort & posture support for long work hours.",
-      link: "https://amzn.to/4fwF9Av"
-    },
-    {
-      name: "Smart LED Monitor",
-      img: "https://m.media-amazon.com/images/I/71QWvfoOOLL._SL1500_.jpg",
-      desc: "Crisp visuals, perfect for design & productivity.",
-      link: "https://amzn.to/4glUZZB"
-    }
+    {name:"AI & Business Innovation Book",img:"https://m.media-amazon.com/images/I/71E5zB1qbIL._SL1500_.jpg",desc:"Learn how AI is transforming industries worldwide.",link:"https://amzn.to/3XE65pa"},
+    {name:"High-Speed Business Laptop",img:"https://m.media-amazon.com/images/I/61xzuXWWozL._SL1500_.jpg",desc:"Power your ideas with top performance.",link:"https://amzn.to/4b4iFwc"},
+    {name:"Wireless Headphones 🎧",img:"https://m.media-amazon.com/images/I/61j17F3C2RL._SL1500_.jpg",desc:"Perfect for meetings, focus, and clarity.",link:"https://amzn.to/4eTiMPH"},
+    {name:"Ergonomic Office Chair",img:"https://m.media-amazon.com/images/I/61yUZ3XvmhL._SL1500_.jpg",desc:"Comfort & posture support for long work hours.",link:"https://amzn.to/4fwF9Av"},
+    {name:"Smart LED Monitor",img:"https://m.media-amazon.com/images/I/71QWvfoOOLL._SL1500_.jpg",desc:"Crisp visuals, perfect for design & productivity.",link:"https://amzn.to/4glUZZB"}
   ];
 
   function renderReel() {
@@ -164,6 +201,7 @@
       const item = document.createElement("div");
       item.classList.add("product");
       item.innerHTML = `
+        <div class="tag">🌌 Real Asif Universe Global</div>
         <img src="${p.img}" alt="${p.name}">
         <h3>${p.name}</h3>
         <p>${p.desc}</p>
@@ -171,25 +209,26 @@
       `;
       reel.appendChild(item);
     });
-    // Clone again for infinite loop feel
+    // clone for continuous scroll
     products.forEach(p => {
-      const item = document.createElement("div");
-      item.classList.add("product");
-      item.innerHTML = `
+      const clone = document.createElement("div");
+      clone.classList.add("product");
+      clone.innerHTML = `
+        <div class="tag">🌌 Real Asif Universe Global</div>
         <img src="${p.img}" alt="${p.name}">
         <h3>${p.name}</h3>
         <p>${p.desc}</p>
         <a href="${p.link}" target="_blank">🛒 View on Amazon</a>
       `;
-      reel.appendChild(item);
+      reel.appendChild(clone);
     });
   }
 
   const messages = [
-    "💰 New visitor exploring your store!",
+    "💰 New visitor exploring Real Asif Store!",
     "🎧 Someone bought Wireless Headphones!",
-    "🚀 Real Asif Store just made a sale!",
-    "🔥 Laptop clicks increasing now!"
+    "🚀 Flash sale product clicked now!",
+    "🔥 Laptop deal trending today!"
   ];
 
   function showPopup() {
