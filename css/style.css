@@ -1765,6 +1765,57 @@ function processCommand(command) {
     width: 90%;
   }
 }
+/* 📱 Mobile View Optimization */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .services-grid,
+  .business-grid,
+  .data-panels,
+  .stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card, .biz-card, .data-card, .stat-card {
+    width: 90%;
+  }
+
+  h1, h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  #timeline .timeline::after {
+    left: 20px;
+  }
+
+  #timeline .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    padding-left: 40px;
+  }
+
+  #timeline .timeline-item::before {
+    left: 10px;
+    right: auto;
+  }
+}
+body {
+  background: radial-gradient(circle at top, #000a1f, #000);
+}
 
  
  

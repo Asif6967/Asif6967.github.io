@@ -1,0 +1,304 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Insights | Real Asif Universe Global</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    body {
+      background: radial-gradient(circle at top, #000a1f, #000);
+      color: white;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: rgba(0, 10, 20, 0.9);
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      color: #00ffff;
+      text-shadow: 0 0 20px #00ffff;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff;
+    }
+
+    h2 {
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ccff;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    /* Cards */
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      border-radius: 15px;
+      padding: 25px;
+      width: 300px;
+      text-align: center;
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 15px;
+      color: #00ffff;
+      text-decoration: none;
+      border: 1px solid #00ffff;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .read-more:hover {
+      background: #00ffff;
+      color: #000;
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 80px auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: #00ffff55;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      padding: 20px 40px;
+      position: relative;
+      width: 50%;
+      opacity: 0;
+      transition: all 1s ease;
+    }
+
+    .timeline-item.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-item.left { left: 0; transform: translateY(100px); }
+    .timeline-item.right { left: 50%; transform: translateY(100px); }
+
+    .timeline-item::before {
+      content: ' ';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 25px;
+      right: -10px;
+      background: #00ffff;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    .timeline-item.right::before { left: -10px; right: auto; }
+
+    .content {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,255,255,0.3);
+      box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.9);
+      border-top: 1px solid rgba(0, 255, 255, 0.3);
+      color: #888;
+      margin-top: 80px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .timeline::after { left: 20px; }
+      .timeline-item { width: 100%; left: 0 !important; padding-left: 40px; }
+      .timeline-item::before { left: 10px; right: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🌌 HEADER -->
+  <header>
+    <div class="logo">🌌 Real Asif Universe Global</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Business Insights</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 💼 BUSINESS INTRO -->
+  <section id="business">
+    <h2>💼 Real Business Intelligence & Strategy</h2>
+    <p>Explore business, AI, and leadership transformations shaping the modern digital world.</p>
+
+    <div class="services-grid">
+      <div class="card">
+        <h3>AI in Business Strategy</h3>
+        <p>Discover how AI drives smarter corporate decisions.</p>
+        <a href="business-ai.html" class="read-more">Read Full Article →</a>
+      </div>
+      <div class="card">
+        <h3>Digital Transformation</h3>
+        <p>How global brands reshape innovation with AI.</p>
+        <a href="business-digital.html" class="read-more">Read Full Article →</a>
+      </div>
+      <div class="card">
+        <h3>Future of Leadership</h3>
+        <p>Next-gen leaders blending empathy & technology.</p>
+        <a href="business-leadership.html" class="read-more">Read Full Article →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📈 BUSINESS TIMELINE -->
+  <section id="timeline">
+    <h2>📈 Business Evolution Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item left"><div class="content"><h3>2020 — Foundation</h3><p>Founded with a vision to unite AI and innovation.</p></div></div>
+      <div class="timeline-item right"><div class="content"><h3>2023 — AI Revolution</h3><p>Launched intelligent ecosystems across industries.</p></div></div>
+      <div class="timeline-item left"><div class="content"><h3>2025 — Global Expansion</h3><p>Now active in 10+ countries with AI leadership.</p></div></div>
+      <div class="timeline-item right"><div class="content"><h3>2030 — Vision Beyond</h3><p>Leading the future of AI-driven humanity.</p></div></div>
+    </div>
+  </section>
+
+  <!-- 🌍 LIVE BUSINESS PORTAL -->
+  <section id="liveData" style="padding:100px 10%; text-align:center; position:relative;">
+    <h2>🌐 Real-Time Business Universe</h2>
+    <p style="color:#ccc;">Live data feed: business headlines, stocks, and crypto insights.</p>
+    <div class="data-panels">
+      <div class="data-card"><h3>📰 Latest News</h3><p id="newsText">Loading...</p></div>
+      <div class="data-card"><h3>💹 NASDAQ</h3><p id="stockValue">Loading...</p></div>
+      <div class="data-card"><h3>₿ Bitcoin</h3><p id="cryptoValue">Loading...</p></div>
+    </div>
+    <button id="announceBtn" style="margin-top:40px; padding:12px 30px; background:linear-gradient(90deg,#00ffff,#0077ff); border:none; border-radius:10px; color:#000; font-weight:600; cursor:pointer;">🎙️ Announce Today’s Insight</button>
+  </section>
+
+  <footer>
+    <p>© 2025 Real Asif Universe Global | Business Insights Portal</p>
+  </footer>
+
+  <!-- 🌌 SCRIPT SECTION -->
+  <script>
+    // Timeline Animation
+    const items = document.querySelectorAll(".timeline-item");
+    window.addEventListener("scroll", () => {
+      const trigger = window.innerHeight * 0.85;
+      items.forEach(item => {
+        const top = item.getBoundingClientRect().top;
+        if (top < trigger) item.classList.add("show");
+      });
+    });
+
+    // Auto Theme
+    const hour = new Date().getHours();
+    document.body.style.background = (hour >= 6 && hour < 18)
+      ? "linear-gradient(to bottom, #aeefff, #001f33)"
+      : "radial-gradient(circle at top, #000a1f, #000)";
+
+    // Live Data Fetch
+    async function fetchLiveData() {
+      try {
+        const news = await fetch("https://gnews.io/api/v4/top-headlines?category=business&lang=en&country=us&max=1&apikey=dc638362da029f46ac2044988cfac80c");
+        const nData = await news.json();
+        document.getElementById("newsText").textContent = nData.articles[0]?.title || "No news.";
+
+        const stock = await fetch("https://financialmodelingprep.com/api/v3/quote/%5ENDX?apikey=demo");
+        const sData = await stock.json();
+        document.getElementById("stockValue").textContent = `NASDAQ: ${sData[0].price.toFixed(2)} USD`;
+
+        const crypto = await fetch("https://api.coindesk.com/v1/bpi/currentprice/USD.json");
+        const cData = await crypto.json();
+        document.getElementById("cryptoValue").textContent = `$${cData.bpi.USD.rate}`;
+      } catch {
+        document.getElementById("newsText").textContent = "⚠️ Failed to fetch data.";
+      }
+    }
+    fetchLiveData();
+
+    // Voice Announcer
+    const speak = text => {
+      const u = new SpeechSynthesisUtterance(text);
+      u.pitch = 1.1; u.rate = 1.05;
+      speechSynthesis.speak(u);
+    };
+    document.getElementById("announceBtn").addEventListener("click", () => {
+      const news = document.getElementById("newsText").textContent;
+      const stock = document.getElementById("stockValue").textContent;
+      const crypto = document.getElementById("cryptoValue").textContent;
+      speak(`Today's top business headline is: ${news}. ${stock}. Bitcoin currently ${crypto}.`);
+    });
+  </script>
+
+  <style>
+    .data-panels {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;
+    }
+    .data-card {
+      width: 300px; background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0,255,255,0.3); border-radius: 15px;
+      padding: 25px; box-shadow: 0 0 25px rgba(0,255,255,0.15);
+    }
+    .data-card h3 { color: #00ffff; }
+    .data-card p { color: #fff; }
+  </style>
+
+</body>
+</html>
