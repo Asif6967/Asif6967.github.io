@@ -63,6 +63,110 @@
       <div class="service-box">🎓 Digital Learning</div>
     </div>
   </section>
+  <!-- 🚀 PROJECTS SECTION -->
+<section id="projects" class="fade-section reveal">
+  <h2>🚀 Featured Projects</h2>
+  <p>Our cutting-edge creations from Real Asif Universe Global.</p>
+
+  <div class="service-container">
+    <div class="service-box">🤖 AI Chat Assistant</div>
+    <div class="service-box">🌐 Smart Web Platform</div>
+    <div class="service-box">📡 Real-Time News Engine</div>
+    <div class="service-box">🎙️ Voice Interactive System</div>
+  </div>
+</section>
+<!-- 👥 TEAM SECTION -->
+<section id="team" class="fade-section reveal">
+  <h2>👥 Meet Our Galactic Team</h2>
+  <p>We are the dreamers, builders, and explorers shaping the Real Asif Universe.</p>
+
+  <div class="service-container">
+    <div class="service-box">
+      🌟 <strong>Asif</strong> — Founder & Visionary<br>
+      <small>Leads global innovation and creative strategy.</small>
+    </div>
+
+    <div class="service-box">
+      🧠 <strong>A.R.I.A</strong> — AI Research Assistant<br>
+      <small>Handles Artificial Intelligence & automation systems.</small>
+    </div>
+
+    <div class="service-box">
+      🛰️ <strong>Nova</strong> — Creative Developer<br>
+      <small>Designs futuristic user experiences and visual systems.</small>
+    </div>
+  </div>
+</section>
+
+<!-- 🎓 MBA JOURNEY SECTION -->
+<section id="mba" class="fade-section reveal">
+  <h2>🎓 My MBA Journey</h2>
+  <p>Exploring leadership, strategy, and innovation — powered by Artificial Intelligence and real-world learning.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>2023 — Admission into MBA Program</h3>
+      <p>Started my MBA journey with a focus on AI-driven business strategies, decision analytics, and entrepreneurship.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>2024 — Business Innovation Projects</h3>
+      <p>Launched Real Asif Universe Global — combining technology, AI, and business design thinking for global scalability.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>2025 — Research in AI & Management</h3>
+      <p>Working on integrating Artificial Intelligence into modern business ecosystems, building intelligent global networks.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 🏆 ACHIEVEMENTS & CASE STUDIES -->
+<section id="achievements" class="fade-section reveal">
+  <h2>🏆 Achievements & Case Studies</h2>
+  <p>Turning ideas into impact — exploring innovation, entrepreneurship, and AI transformation in real life.</p>
+
+  <div class="case-container">
+    <div class="case-card">
+      <h3>🚀 AI-Based Business Analytics System</h3>
+      <p>Developed an intelligent dashboard for business insights using Python + ML. Helped companies make faster decisions.</p>
+    </div>
+
+    <div class="case-card">
+      <h3>🌐 Digital Transformation Strategy</h3>
+      <p>Created a digital transformation framework for startups, improving their online presence and brand performance.</p>
+    </div>
+
+    <div class="case-card">
+      <h3>🤖 AI Chat Assistant (Real Asif Universe)</h3>
+      <p>Integrated Flask + JS to build a live AI system for instant user interaction and learning support.</p>
+    </div>
+  </div>
+</section>
+<!-- 🧠 INSIGHTS / BLOG SECTION -->
+<section id="insights" class="fade-section reveal">
+  <h2>🧠 Insights & Thought Leadership</h2>
+  <p>Exploring the intersection of Business, AI, and Leadership — through my research, reflections, and real-world experiences.</p>
+
+  <div class="blog-container">
+    <div class="blog-card">
+      <h3>📊 How AI is Redefining Business Strategy</h3>
+      <p>Artificial Intelligence isn't just automation — it's a leadership tool that can predict, optimize, and innovate in ways humans can amplify.</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+
+    <div class="blog-card">
+      <h3>🌐 The Future of MBA: Data-Driven Leadership</h3>
+      <p>Tomorrow's leaders won't just manage — they’ll integrate analytics, human empathy, and AI to drive ethical growth.</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+
+    <div class="blog-card">
+      <h3>🚀 Building Real Asif Universe Global</h3>
+      <p>From idea to execution — how passion, purpose, and AI created a platform connecting creativity and global innovation.</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+  </div>
+</section>
+
 
   <!-- 📩 CONTACT SECTION -->
   <section id="contact" class="contact-section">
@@ -133,9 +237,12 @@
         Innovation • Technology • Knowledge • Future • Connection • Energy
       </div>
     </div>
+    
   </footer>
+  
 
   <!-- 🧩 JAVASCRIPT LINK -->
+   
   <script src="js/app.js"></script>
   <!-- 💬 Floating Chat Button -->
 <div id="chatBubble" class="chat-bubble">💬</div>
@@ -165,6 +272,45 @@
 
 <script src="js/voice.js"></script>
 
+<!-- 🌐 Floating Social Media Follow Bar - Real Asif Universe Global -->
+<div class="follow-bar">
+  <a href="https://instagram.com/mohdasif696788" target="_blank" title="Instagram">📸</a>
+  <a href="https://www.youtube.com/channel/UCRfvXfU4toossqCIbuXNblA" target="_blank" title="YouTube">🎥</a>
+  <a href="https://x.com/MohdAsif696788" target="_blank" title="Twitter (X)">🐦</a>
+  <a href="https://www.facebook.com/realasifuniverse" target="_blank" title="Facebook">📘</a>
+  <a href="mailto:realasifuniverseglobal@gmail.com" title="Email">📩</a>
+</div>
+<!-- 🌌 FIXED SCROLL REVEAL + SMOOTH FLOW SYSTEM -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // ✨ Scroll animation (only for fade-section)
+  const fadeSections = document.querySelectorAll(".fade-section");
+
+  const revealOnScroll = () => {
+    const triggerBottom = window.innerHeight * 0.85;
+    fadeSections.forEach(section => {
+      const boxTop = section.getBoundingClientRect().top;
+      if (boxTop < triggerBottom) {
+        section.classList.add("visible");
+      } else {
+        section.classList.remove("visible");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+
+  // 🌠 Smooth Scroll (no interference with JS)
+  document.querySelectorAll("a[href^='#']").forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) target.scrollIntoView({ behavior: "smooth" });
+    });
+  });
+});
+</script>
 
 
 </body>

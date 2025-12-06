@@ -1570,6 +1570,201 @@ function processCommand(command) {
     text-align: center;
   }
 }
+/* 🌌 Real Asif Universe Global Footer */
+.social-footer {
+  background: linear-gradient(180deg, #05081f, #0b0f29);
+  text-align: center;
+  padding: 40px 0;
+  color: white;
+  border-top: 1px solid #00ccff44;
+  box-shadow: 0 -3px 20px rgba(0, 204, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.social-footer h3 {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.social-footer h3 span {
+  color: #00ccff;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.social-icons a {
+  color: #00ccff;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #00ccff;
+  padding: 8px 15px;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+}
+.social-icons a:hover {
+  background: #00ccff;
+  color: #0b0f29;
+  box-shadow: 0 0 15px #00ccff;
+  transform: scale(1.1);
+}
+.footer-tagline {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 10px;
+  font-style: italic;
+}
+/* 🌐 Floating Social Media Follow Bar */
+.follow-bar {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.follow-bar a {
+  margin: 8px 0;
+  font-size: 26px;
+  text-align: center;
+  text-decoration: none;
+  color: #00ccff;
+  background: #0b0f29;
+  border: 1px solid #00ccff;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 204, 255, 0.2);
+}
+
+.follow-bar a:hover {
+  background: #00ccff;
+  color: #0b0f29;
+  box-shadow: 0 0 20px #00ccff, 0 0 40px #00ccff;
+  transform: scale(1.2) rotate(8deg);
+}
+/* 🌐 Floating Social Media Follow Bar */
+.follow-bar {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.follow-bar a {
+  margin: 8px 0;
+  font-size: 26px;
+  text-align: center;
+  text-decoration: none;
+  color: #00ccff;
+  background: #0b0f29;
+  border: 1px solid #00ccff;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 204, 255, 0.2);
+}
+
+.follow-bar a:hover {
+  background: #00ccff;
+  color: #0b0f29;
+  box-shadow: 0 0 20px #00ccff, 0 0 40px #00ccff;
+  transform: scale(1.2) rotate(8deg);
+}
+/* 🧠 Blog / Insights Section */
+#insights {
+  background: linear-gradient(180deg, rgba(0, 10, 20, 0.8), rgba(0, 0, 40, 0.95));
+  padding: 80px 10%;
+  text-align: center;
+  color: #fff;
+  border-top: 1px solid #00ffff44;
+  box-shadow: 0 0 25px rgba(0,255,255,0.1);
+}
+
+#insights h2 {
+  color: #00ffff;
+  text-shadow: 0 0 25px #00ffff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#insights p {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.blog-card {
+  width: 320px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: left;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+}
+
+.blog-card h3 {
+  color: #00ffff;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.blog-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.read-more {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.read-more:hover {
+  color: white;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* 📱 Responsive Fix */
+@media (max-width: 768px) {
+  .blog-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .blog-card {
+    width: 90%;
+  }
+}
 
  
  
