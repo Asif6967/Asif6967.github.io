@@ -10,6 +10,8 @@
       color: white;
       font-family: "Poppins", sans-serif;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
 
     header {
@@ -70,29 +72,34 @@
       letter-spacing: 1px;
     }
 
-    #voiceBtn {
-      margin-top: 40px;
-      padding: 12px 25px;
-      font-size: 1.1rem;
-      color: #fff;
-      background: linear-gradient(45deg, #00ffff, #0077ff);
-      border: none;
-      border-radius: 30px;
+    /* 🎙️ Mic Button */
+    #micGlow {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #00ffff, #0077ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
       cursor: pointer;
-      box-shadow: 0 0 20px #00ffff;
-      transition: 0.3s;
+      box-shadow: 0 0 30px #00ffff;
+      animation: glow 2s infinite;
+      margin: 30px auto 10px;
     }
 
-    #voiceBtn:hover {
-      background: linear-gradient(45deg, #00ccff, #0033ff);
-      box-shadow: 0 0 40px #00ffff;
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px #00ffff; transform: scale(1); }
+      50% { box-shadow: 0 0 40px #00ffff; transform: scale(1.15); }
+      100% { box-shadow: 0 0 10px #00ffff; transform: scale(1); }
     }
 
     #aiReply {
-      margin-top: 25px;
+      margin-top: 20px;
       color: #00ffff;
       font-style: italic;
       text-shadow: 0 0 15px #00ffff;
+      min-height: 30px;
     }
 
     footer {
@@ -102,6 +109,12 @@
       border-top: 1px solid rgba(0, 255, 255, 0.3);
       color: #888;
       margin-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul { gap: 15px; font-size: 0.9rem; }
+      h1 { font-size: 1.8rem; }
+      marquee { font-size: 1rem; }
     }
   </style>
 </head>
@@ -118,97 +131,122 @@
     </nav>
   </header>
 
-  <!-- 🌍 ABOUT SECTION -->
   <section id="about">
     <h1>💫 About Real Asif Universe Global</h1>
 
     <marquee behavior="scroll" direction="left" scrollamount="5">
-      🌐 Real Asif Universe Global — Empowering people and businesses with Artificial Intelligence, 
-      digital transformation, and futuristic education. Building a smarter, connected, and innovative world for the next generation. 🚀
+      🌐 Real Asif Universe Global — Empowering humanity with Artificial Intelligence, digital transformation, and futuristic learning. 
+      Building a smarter, connected, and innovative world for tomorrow. 🚀
     </marquee>
 
     <p style="max-width:900px; margin:auto; color:#ccc; font-size:1.1rem;">
       <strong style="color:#00ffff;">Real Asif Universe Global</strong> is a futuristic ecosystem combining 
-      <span style="color:#ff00ff;">technology, education, and innovation</span> to reshape the way people and organizations grow.  
-      Our mission is to inspire humanity through intelligence, creativity, and purposeful design.
+      <span style="color:#ff00ff;">Technology, AI, and Education</span> to transform innovation across the world.  
+      Our mission is to connect intelligence with imagination, guiding businesses and individuals toward a visionary future.
     </p>
 
-     <!-- 🎙️ Real Asif Universe Smart AI Assistant -->
-<section id="ai-assistant" style="text-align:center; padding:50px;">
-  <h2 style="color:#00ffff;">🧠 Talk to Real Asif Universe AI</h2>
-  <button id="micBtn"
-    style="background:linear-gradient(90deg,#00ffff,#0077ff);
-    color:#fff;border:none;padding:15px 40px;border-radius:50px;
-    font-size:18px;cursor:pointer;box-shadow:0 0 25px #00ffff;transition:all .3s;">
-    🎤 Start Listening
-  </button>
-  <p id="aiText" style="color:#00ffff;margin-top:20px;">Click and speak...</p>
-</section>
-
-<script>
-const micBtn = document.getElementById("micBtn");
-const aiText = document.getElementById("aiText");
-
-function speak(text) {
-  const utter = new SpeechSynthesisUtterance(text);
-  utter.lang = "en-US";
-  utter.pitch = 1.1;
-  utter.rate = 1;
-  speechSynthesis.speak(utter);
-}
-
-if ("webkitSpeechRecognition" in window) {
-  const recognition = new webkitSpeechRecognition();
-  recognition.lang = "en-US";
-  recognition.continuous = false;
-  recognition.interimResults = false;
-
-  micBtn.addEventListener("click", async () => {
-    try {
-      await navigator.mediaDevices.getUserMedia({ audio: true });
-      aiText.textContent = "🎧 Listening...";
-      recognition.start();
-    } catch (e) {
-      aiText.textContent = "⚠️ Please allow microphone access in your browser.";
-    }
-  });
-
-  recognition.onresult = async (event) => {
-    const text = event.results[0][0].transcript;
-    aiText.textContent = "🧠 You said: " + text;
-
-    try {
-      const res = await fetch("http://127.0.0.1:5000/api/ai", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text })
-      });
-      const data = await res.json();
-      const reply = data.reply;
-      aiText.textContent = "🤖 " + reply;
-      speak(reply);
-    } catch (err) {
-      aiText.textContent = "⚠️ AI server not responding...";
-      speak("Sorry, the AI system is offline right now.");
-    }
-  };
-
-  recognition.onerror = () => {
-    aiText.textContent = "⚠️ Could not understand, please try again.";
-  };
-} else {
-  aiText.textContent = "❌ Your browser does not support voice recognition.";
-}
-</script>
-
+    <div id="micGlow">🎤</div>
+    <p id="aiReply">Click the mic & ask me anything about Real Asif Universe Global...</p>
+  </section>
 
   <footer>
     <p>© 2025 Real Asif Universe Global | Innovation Beyond Earth 🌍</p>
   </footer>
 
   <script>
-     
+    const mic = document.getElementById("micGlow");
+    const aiReply = document.getElementById("aiReply");
+
+    function speak(text) {
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "en-US";
+      utter.pitch = 1.05;
+      utter.rate = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(utter);
+    }
+
+    async function checkPermissions() {
+      try {
+        await navigator.mediaDevices.getUserMedia({ audio: true });
+        speak("Welcome to Real Asif Universe Global. I am your AI Assistant. Ask me anything!");
+        aiReply.textContent = "🎧 I’m ready to listen.";
+      } catch {
+        aiReply.textContent = "⚠️ Please allow microphone access to talk with me.";
+        speak("Please allow microphone access to talk with me.");
+      }
+    }
+
+    checkPermissions();
+
+    if ("webkitSpeechRecognition" in window) {
+      const recognition = new webkitSpeechRecognition();
+      recognition.lang = "en-US";
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      mic.addEventListener("click", async () => {
+        try {
+          await navigator.mediaDevices.getUserMedia({ audio: true });
+          aiReply.textContent = "🎧 Listening...";
+          recognition.start();
+        } catch {
+          aiReply.textContent = "⚠️ Please allow microphone access.";
+        }
+      });
+
+      recognition.onresult = (event) => {
+        const query = event.results[0][0].transcript.toLowerCase();
+        aiReply.textContent = `🗣️ You said: "${query}"`;
+
+        let response = "That's interesting! Real Asif Universe Global is all about innovation and AI.";
+        if (query.includes("hello")) response = "Hello and welcome to Real Asif Universe Global!";
+        else if (query.includes("who are you")) response = "I am your AI assistant, created by Real Asif Universe Global.";
+        else if (query.includes("what is real asif universe")) response = "It's a futuristic digital platform for innovation, AI, and global learning.";
+        else if (query.includes("how are you")) response = "I'm fully functional and glowing bright, Asif!";
+        else if (query.includes("thank you")) response = "You're welcome! Keep exploring Real Asif Universe Global.";
+
+        aiReply.textContent = response;
+        speak(response);
+      };
+    } else {
+      aiReply.textContent = "❌ Speech recognition not supported on this browser.";
+    }
   </script>
-  
+  <!-- 💬 ChatGPT-like Real AI Assistant -->
+<section id="aiChat" style="text-align:center; padding:60px;">
+  <h2 style="color:#00ffff;">🤖 Ask Me Anything!</h2>
+  <p style="color:#ccc;">Speak or type your question — I'll explain in detail.</p>
+
+  <textarea id="userInput" rows="3" style="width:70%; padding:10px; border-radius:8px; border:none; outline:none; background:#001a33; color:white; font-size:1.1rem;"></textarea><br>
+  <button id="askBtn" style="margin-top:15px; padding:10px 25px; border:none; background:#00ffff; color:black; font-weight:bold; border-radius:20px; cursor:pointer;">Ask</button>
+
+  <div id="aiResponse" style="margin-top:30px; color:#00ffff; font-size:1.1rem; max-width:80%; margin:auto; text-align:left; background:rgba(255,255,255,0.05); padding:20px; border-radius:10px; box-shadow:0 0 20px #00ffff;"></div>
+</section>
+
+<script>
+const btn = document.getElementById("askBtn");
+const input = document.getElementById("userInput");
+const output = document.getElementById("aiResponse");
+
+btn.addEventListener("click", async () => {
+  const question = input.value.trim();
+  if (!question) return alert("Please ask something...");
+
+  output.innerHTML = "💭 Thinking...";
+  try {
+    const res = await fetch("http://127.0.0.1:5000/api/ai", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: question })
+    });
+    const data = await res.json();
+    output.innerHTML = `<strong>AI:</strong> ${data.reply}`;
+  } catch (err) {
+    output.innerHTML = "⚠️ Connection error.";
+  }
+});
+</script>
+
 </body>
 </html>
