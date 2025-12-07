@@ -12,7 +12,34 @@
 
   <title>Real Asif Universe Global</title>
   <link rel="stylesheet" href="css/style.css">
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getStorage, ref, uploadBytesResumable, getDownloadURL, listAll, deleteObject } 
+  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD71sAAbUakNmasNmCN10I5s7lCsmF7a3M",
+    authDomain: "real-asif-universe-global.firebaseapp.com",
+    projectId: "real-asif-universe-global",
+    storageBucket: "real-asif-universe-global.appspot.com",
+    messagingSenderId: "160201315076",
+    appId: "1:160201315076:web:874b7bac259b40de06f651",
+    measurementId: "G-V4KQQFTYB3"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const storage = getStorage(app);
+
+  window.firebaseStorage = storage;
+  window.firebaseRef = ref;
+  window.uploadBytesResumable = uploadBytesResumable;
+  window.getDownloadURL = getDownloadURL;
+  window.listAll = listAll;
+  window.deleteObject = deleteObject;
+</script>
+
 </head>
+
 <body>
   
   <!-- 🌐 HEADER -->
@@ -29,6 +56,9 @@
 
  <li><a href="about.html">About</a></li>
      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="locker.html">File Locker</a></li>
+
+
   </ul>
 </nav>
 
@@ -61,15 +91,60 @@
     Our mission is to inspire humanity through intelligent design and technology.</p>
   </section>
 
-  <!-- ⚙️ SERVICES SECTION -->
-  <section id="services" class="fade-section reveal">
-    <h2>Our Services</h2>
-    <div class="service-container">
-       
-      <div class="service-box">🤖 Artificial Intelligence</div>
-      <div class="service-box">🎓 Digital Learning</div>
-    </div>
+   <section id="services" class="fade-section reveal">
+  <h2>💼 Our Services</h2>
+  <div class="service-container">
+    <div class="service-panel">🤖 Artificial Intelligence</div>
+    <div class="service-panel">🎓 Digital Learning</div>
+    <div class="service-panel">🌐 Web Solutions</div>
+    <div class="service-panel">📊 Business Analytics</div>
+    
+</section>
+
+<script type="module">
+  const fileInput = document.getElementById("fileInput");
+  const uploadBtn = document.getElementById("uploadBtn");
+  const uploadProgress = document.getElementById("uploadProgress");
+  const uploadedFiles = document.getElementById("uploadedFiles");
+
+  async function loadFiles() {
+    uploadedFiles.innerHTML = "Loading files...";
+    const folderRef = firebaseRef(firebaseStorage, "uploads/");
+    const result = await listAll(folderRef);
+    uploadedFiles.innerHTML = "";
+    result.items.forEach(async (item) => {
+      const url = await getDownloadURL(item);
+      const div = document.createElement("div");
+      div.innerHTML = `<a href="${url}" target="_blank" style="color:cyan;">📄 ${item.name}</a>`;
+      uploadedFiles.appendChild(div);
+    });
+  }
+
+  uploadBtn.addEventListener("click", async () => {
+    const file = fileInput.files[0];
+    if (!file) return alert("Please select a file!");
+    const fileRef = firebaseRef(firebaseStorage, "uploads/" + file.name);
+    const uploadTask = uploadBytesResumable(fileRef, file);
+
+    uploadTask.on("state_changed", (snapshot) => {
+      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      uploadProgress.textContent = `Uploading: ${progress.toFixed(2)}%`;
+    },
+    (error) => alert("❌ Upload failed: " + error.message),
+    async () => {
+      uploadProgress.textContent = "✅ Upload complete!";
+      await loadFiles();
+    });
+  });
+
+  loadFiles();
+</script>
+
+  </div>
+</section>
+
   </section>
+
   <!-- 🚀 PROJECTS SECTION -->
 <section id="projects" class="fade-section reveal">
   <h2>🚀 Featured Projects</h2>
