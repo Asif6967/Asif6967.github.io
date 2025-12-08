@@ -44,3 +44,41 @@ def chat_ai():
 if __name__ == "__main__":
     print("🚀 Real Asif Universe AI Running at: http://127.0.0.1:5000")
     app.run(debug=True)
+from flask import Flask, render_template, request, send_from_directory, redirect, url_for
+import os
+
+app = Flask(__name__)
+UPLOAD_FOLDER = 'uploads'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# Folder automatically create if not present
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
+@app.route('/')
+def home():
+    files = os.listdir(app.config['UPLOAD_FOLDER'])
+    return render_template('locker.html', files=files)
+
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    file = request.files['file']
+    if file.filename == '':
+        return redirect(url_for('home'))
+
+    file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
+    return redirect(url_for('home'))
+
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
+@app.route('/delete/<filename>')
+def delete_file(filename):
+    file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    if os.path.exists(file_path):
+        os.remove(file_path)
+    return redirect(url_for('home'))
+
+if __name__ == '__main__':
+    app.run(debug=True)

@@ -37,7 +37,7 @@
   window.listAll = listAll;
   window.deleteObject = deleteObject;
 </script>
-
+<meta name="google-adsense-account" content="ca-pub-9381706139191072">
 </head>
 
 <body>
@@ -527,6 +527,63 @@ document.addEventListener("DOMContentLoaded", () => {
     synth.cancel();
     synth.speak(utter);
   }
+  
+</script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getStorage, ref, uploadBytes, getDownloadURL, listAll, deleteObject } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD71sAAbUakNmasNmCN10I5s7lCsmF7a3M",
+    authDomain: "real-asif-universe-global.firebaseapp.com",
+    projectId: "real-asif-universe-global",
+    storageBucket: "real-asif-universe-global.appspot.com",
+    messagingSenderId: "160201315076",
+    appId: "1:160201315076:web:7d009d9322b90b1706f651",
+    measurementId: "G-16TQ55CTEE"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const storage = getStorage(app);
+
+  const uploadBtn = document.querySelector("#uploadBtn");
+  const fileInput = document.querySelector("#fileInput");
+  const uploadedList = document.querySelector("#uploadedList");
+
+  uploadBtn.addEventListener("click", async () => {
+    const file = fileInput.files[0];
+    if (!file) {
+      alert("Please choose a file first!");
+      return;
+    }
+
+    const fileRef = ref(storage, `uploads/${file.name}`);
+
+    try {
+      await uploadBytes(fileRef, file);
+      const url = await getDownloadURL(fileRef);
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="${url}" target="_blank">${file.name}</a>`;
+      uploadedList.appendChild(li);
+      alert("✅ File uploaded successfully!");
+    } catch (error) {
+      console.error(error);
+      alert("❌ Upload failed: " + error.message);
+    }
+  });
+
+  // Show already uploaded files
+  const loadFiles = async () => {
+    const listRef = ref(storage, "uploads/");
+    const res = await listAll(listRef);
+    res.items.forEach(async (itemRef) => {
+      const url = await getDownloadURL(itemRef);
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="${url}" target="_blank">${itemRef.name}</a>`;
+      uploadedList.appendChild(li);
+    });
+  };
+  loadFiles();
 </script>
 
 </body>
